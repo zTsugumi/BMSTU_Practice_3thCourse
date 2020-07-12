@@ -1,14 +1,16 @@
-CREATE DATABASE schedule;
+CREATE DATABASE schedule_db;
+
+\c schedule_db;
 
 DROP TABLE IF EXISTS groups;
+DROP TABLE IF EXISTS classes;
 DROP TABLE IF EXISTS classrooms;
 DROP TABLE IF EXISTS subjects;
-DROP TABLE IF EXISTS classes;
 DROP TABLE IF EXISTS faculties;
 
 CREATE TABLE groups(
 	id serial PRIMARY KEY,
-	course INT NOT NULL,
+	course INT NOT NULL
 --	faculty VARCHAR(2) NOT NULL
 );
 
@@ -39,9 +41,9 @@ CREATE TABLE classes(
 );
 
 ALTER TABLE classes
-ADD CONSTRAINT pkey_classes   	PRIMARY KEY	(subject_id, classroom_id,),	
-ADD CONSTRAINT fkey_subject_id FOREIGN KEY (subject_id) REFERENCES subjects(id),
-ADD CONSTRAINT fkey_classroom_id  FOREIGN KEY (classroom_id) REFERENCES classrooms(id);
+	ADD CONSTRAINT pkey_classes PRIMARY KEY	(subject_id, classroom_id),	
+	ADD CONSTRAINT fkey_subject_id FOREIGN KEY (subject_id) REFERENCES subjects(id),
+	ADD CONSTRAINT fkey_classroom_id FOREIGN KEY (classroom_id) REFERENCES classrooms(id);
 
 -- PARA = 90 min; BREAK = 10 min
 ALTER TABLE classrooms ADD CONSTRAINT para_check CHECK (para BETWEEN 1 AND 7);
