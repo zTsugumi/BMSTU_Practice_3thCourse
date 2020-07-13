@@ -7,3 +7,6 @@ Email: <famkowalsky@gmail.com>
 
 ### Requirements
 DBMS: PostgreSQL  
+
+### TODO
+Fix check constraints to table "classes"
