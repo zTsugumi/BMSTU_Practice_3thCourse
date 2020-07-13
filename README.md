@@ -5,6 +5,7 @@ Develop a program in Lisp that generates a class schedule for students.
 * SLIME: Superior Lisp Interaction Mode for Emacs  
 * SBCL: Steel Bank Common Lisp  
 [See more](https://lispcookbook.github.io/cl-cookbook/emacs-ide.html)
+* PostgreSQL
 # Problem statement
 ## Given
 * List of groups 
