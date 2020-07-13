@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Creating a schedule of classes for students
 Develop a program in Lisp that generates a class schedule for students.
 # Tech/Framework used
@@ -34,9 +33,7 @@ Develop a program in Lisp that generates a class schedule for students.
 *	Copy information from DB tables to lists (develop the structure of the lists) or fill in lists by entering information using the keyboard;
 *	Split groups into streams – a new list;
 *	Create a list of available classrooms for the week based on the list of classrooms and the possible start time of classes.
-=======
-=======
->>>>>>> 431aa67ce53586833551885005d284f644973cba
+
 # Creating a schedule of classes for students
 Develop a program in Lisp that generates a class schedule for students.
 # Tech/Framework used
