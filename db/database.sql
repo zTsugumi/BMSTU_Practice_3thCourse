@@ -4,9 +4,9 @@ CREATE DATABASE schedule_db;
 
 DROP TABLE IF EXISTS groups;
 DROP TABLE IF EXISTS classes;
-DROP TABLE IF EXISTS classrooms;
 DROP TABLE IF EXISTS subjects;
 DROP TABLE IF EXISTS faculties;
+DROP TABLE IF EXISTS classrooms;
 
 CREATE TABLE groups(
 	id serial PRIMARY KEY,
