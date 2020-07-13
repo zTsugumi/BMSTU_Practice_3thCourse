@@ -65,21 +65,13 @@ ALTER TABLE classrooms ADD CONSTRAINT time_check CHECK (start_time >= '{"8:30"}'
 
 
 -- INSERT DATA FROM CSV FILE
-<<<<<<< HEAD
-COPY subjects (name) FROM '\BMSTU_Practice_3thCourse\db\subjects.csv' DELIMITER ',' CSV;
-COPY faculties (name, subject_list) FROM '\BMSTU_Practice_3thCourse\db\faculties.csv' DELIMITER ',' CSV;
-COPY classrooms (room_nr, start_time, para) FROM '\BMSTU_Practice_3thCourse\db\classrooms.csv' DELIMITER ',' CSV;
-COPY groups	(course, faculty_id) FROM '\BMSTU_Practice_3thCourse\db\groups.csv' DELIMITER ',' CSV;
-COPY classes (subject_id, classroom_id, day, start_time, class_type) FROM '\BMSTU_Practice_3thCourse\db\classes.csv' DELIMITER ',' CSV;
-COPY faculty_subjects (faculty_id, subject_id) FROM '\BMSTU_Practice_3thCourse\db\fac_sub.csv' DELIMITER ',' CSV;
-=======
 \COPY subjects (name) FROM 'subjects.csv' DELIMITER ',' CSV;
 \COPY faculties (name, subject_list) FROM 'faculties.csv' DELIMITER ',' CSV;
 \COPY classrooms (room_nr, start_time, para) FROM 'classrooms.csv' DELIMITER ',' CSV;
-\COPY groups	(course, faculty_id) FROM 'groups.csv' DELIMITER ',' CSV;
+\COPY groups (course, faculty_id) FROM 'groups.csv' DELIMITER ',' CSV;
 \COPY classes (subject_id, classroom_id, day, start_time, class_type) FROM 'classes.csv' DELIMITER ',' CSV;
+\COPY faculty_subjects (faculty_id, subject_id) FROM 'fac_sub.csv' DELIMITER ',' CSV;
 
->>>>>>> 431aa67ce53586833551885005d284f644973cba
 
 -- INSERT DATA MANUALLY 
 -- INSERT INTO classrooms (room_nr, start_time, para)
