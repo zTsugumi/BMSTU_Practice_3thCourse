@@ -11,6 +11,10 @@
     (pomo:with-connection params
       (pomo:query (:select '* :from table-name)))))
 
+(defun test-load-table ()
+  "Unit test for load-table"
+  (format t "Groups: ~a~%Faculties: ~a~%Classrooms: ~a~%Subjects: ~a~%Classes: ~a~%" *groups* *faculties* *classrooms* *subjects* *classes*))
+
 (defvar *groups* (load-table 'groups))
 (defvar *faculties* (load-table 'faculties))
 (defvar *classrooms* (load-table 'classrooms))
