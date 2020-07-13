@@ -65,24 +65,33 @@ ALTER TABLE classrooms ADD CONSTRAINT time_check CHECK (start_time >= '{"8:30"}'
 
 
 -- INSERT DATA FROM CSV FILE
+<<<<<<< HEAD
 COPY subjects (name) FROM '\BMSTU_Practice_3thCourse\db\subjects.csv' DELIMITER ',' CSV;
 COPY faculties (name, subject_list) FROM '\BMSTU_Practice_3thCourse\db\faculties.csv' DELIMITER ',' CSV;
 COPY classrooms (room_nr, start_time, para) FROM '\BMSTU_Practice_3thCourse\db\classrooms.csv' DELIMITER ',' CSV;
 COPY groups	(course, faculty_id) FROM '\BMSTU_Practice_3thCourse\db\groups.csv' DELIMITER ',' CSV;
 COPY classes (subject_id, classroom_id, day, start_time, class_type) FROM '\BMSTU_Practice_3thCourse\db\classes.csv' DELIMITER ',' CSV;
 COPY faculty_subjects (faculty_id, subject_id) FROM '\BMSTU_Practice_3thCourse\db\fac_sub.csv' DELIMITER ',' CSV;
+=======
+\COPY subjects (name) FROM 'subjects.csv' DELIMITER ',' CSV;
+\COPY faculties (name, subject_list) FROM 'faculties.csv' DELIMITER ',' CSV;
+\COPY classrooms (room_nr, start_time, para) FROM 'classrooms.csv' DELIMITER ',' CSV;
+\COPY groups	(course, faculty_id) FROM 'groups.csv' DELIMITER ',' CSV;
+\COPY classes (subject_id, classroom_id, day, start_time, class_type) FROM 'classes.csv' DELIMITER ',' CSV;
+
+>>>>>>> 431aa67ce53586833551885005d284f644973cba
 
 -- INSERT DATA MANUALLY 
-INSERT INTO classrooms (room_nr, start_time, para)
-VALUES
-	(
-		511,
-		'{"8:30", "10:10", "8:30", "11:50", "8:30", "10:10"}',
-		'{4, 2, 5, 2, 3, 5}'
-	);
+-- INSERT INTO classrooms (room_nr, start_time, para)
+-- VALUES
+-- 	(
+-- 		511,
+-- 		'{"8:30", "10:10", "8:30", "11:50", "8:30", "10:10"}',
+-- 		'{4, 2, 5, 2, 3, 5}'
+-- 	);
 
-INSERT INTO faculties (name, subject_list)
-VALUES
-	('SM', '{"Programming in C", "Logic and Theory Algorithms", "Data Structure", "DBMS", "Computer Design"}'),
-	('LR', '{"Probability Theory", "Advanced Mathematics", "Discrete mathematics", "Decision Theory", "Mathematical statistics"}'),
-	('EN', '{"Physics", "Mechatronics System", "Electric drive of machines", "Analysis of machine structures", "Basics of machine tools development"}');
+-- INSERT INTO faculties (name, subject_list)
+-- VALUES
+-- 	('SM', '{"Programming in C", "Logic and Theory Algorithms", "Data Structure", "DBMS", "Computer Design"}'),
+-- 	('LR', '{"Probability Theory", "Advanced Mathematics", "Discrete mathematics", "Decision Theory", "Mathematical statistics"}'),
+-- 	('EN', '{"Physics", "Mechatronics System", "Electric drive of machines", "Analysis of machine structures", "Basics of machine tools development"}');
