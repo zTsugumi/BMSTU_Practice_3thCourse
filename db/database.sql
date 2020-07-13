@@ -2,6 +2,7 @@ CREATE DATABASE schedule_db;
 
 \c schedule_db;
 
+DROP TABLE IF EXISTS faculty_subjects;
 DROP TABLE IF EXISTS groups;
 DROP TABLE IF EXISTS classes;
 DROP TABLE IF EXISTS subjects;
@@ -40,6 +41,16 @@ CREATE TABLE classes(
 	class_type  VARCHAR(10) NOT NULL
 );
 
+CREATE TABLE faculty_subjects(
+	faculty_id int NOT NULL,
+	subject_id int NOT NULL
+);
+
+ALTER TABLE faculty_subjects
+	ADD CONSTRAINT pkey_fs	PRIMARY KEY	(faculty_id, subject_id),	
+	ADD CONSTRAINT fkey_fs_faculty_id FOREIGN KEY (faculty_id) REFERENCES faculties(id),
+	ADD CONSTRAINT fkey_fs_subject_id FOREIGN KEY (subject_id) REFERENCES subjects(id);
+	
 ALTER TABLE classes
 	ADD CONSTRAINT pkey_classes	PRIMARY KEY	(subject_id, classroom_id),	
 	ADD CONSTRAINT fkey_subject_id FOREIGN KEY (subject_id) REFERENCES subjects(id),
@@ -50,7 +61,7 @@ ALTER TABLE groups
 
 -- PARA = 90 min; BREAK = 10 min
 -- ALTER TABLE classrooms ADD CONSTRAINT para_check CHECK (para BETWEEN 1 AND 7);
--- ALTER TABLE classrooms ADD CONSTRAINT time_check CHECK (start_time >= '8:30');
+ALTER TABLE classrooms ADD CONSTRAINT time_check CHECK (start_time >= '{"8:30"}');
 
 
 -- INSERT DATA FROM CSV FILE
@@ -59,7 +70,7 @@ COPY faculties (name, subject_list) FROM '\BMSTU_Practice_3thCourse\db\faculties
 COPY classrooms (room_nr, start_time, para) FROM '\BMSTU_Practice_3thCourse\db\classrooms.csv' DELIMITER ',' CSV;
 COPY groups	(course, faculty_id) FROM '\BMSTU_Practice_3thCourse\db\groups.csv' DELIMITER ',' CSV;
 COPY classes (subject_id, classroom_id, day, start_time, class_type) FROM '\BMSTU_Practice_3thCourse\db\classes.csv' DELIMITER ',' CSV;
-
+COPY faculty_subjects (faculty_id, subject_id) FROM '\BMSTU_Practice_3thCourse\db\fac_sub.csv' DELIMITER ',' CSV;
 
 -- INSERT DATA MANUALLY 
 INSERT INTO classrooms (room_nr, start_time, para)

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Creating a schedule of classes for students
 Develop a program in Lisp that generates a class schedule for students.
 # Tech/Framework used
