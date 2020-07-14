@@ -4,8 +4,7 @@
 
 (local-time:set-local-time-cl-postgres-readers)
 
-(defun load-table (table-name
-		   &optional (db-name "schedule_db") (db-user "postgres") (db-pwd "something"))
+(defun load-table (table-name &key (db-name "schedule_db")(db-user "postgres")(db-pwd "something"))
   "Parse table from DB to a list"
   (let ((params (list db-name db-user db-pwd "localhost" :port 5432)))
     (pomo:with-connection params
