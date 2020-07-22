@@ -1,3 +1,4 @@
 *.docx
 *.lisp~
 *.asd~
+*.fasl
