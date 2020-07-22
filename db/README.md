@@ -9,4 +9,4 @@ Email: <famkowalsky@gmail.com>
 DBMS: PostgreSQL  
 
 ### ER Diagram:  
-![alt text](https://github.com/zTsugumi/BMSTU_Practice_3thCourse/tree/feature_db/db/ER.png "ER Diagram")
+![click here](https://github.com/zTsugumi/BMSTU_Practice_3thCourse/tree/feature_db/db/ER.png "ER Diagram")
