@@ -1,4 +1,12 @@
-IU, "{"Programming in C", "Logic and Theory Algorithms", "Data Structure", "DBMS", "Computer Design"}"
-FN, "{"Probability Theory" "Advanced Mathematics", "Discrete mathematics", "Decision Theory", "Mathematical statistics"}"
-MT, "{"Physics",  "Mechatronics System", "Electric drive of machines", "Analysis of machine structures", "Basics of machine tools development"}"
-
+IU, 1
+IU, 2
+IU, 3
+IU, 4
+FN, 1
+FN, 2
+FN, 3
+FN, 4
+MT, 1
+MT, 2
+MT, 3
+MT, 4
