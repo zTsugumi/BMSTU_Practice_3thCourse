@@ -112,7 +112,7 @@ EXECUTE PROCEDURE check_group_availability();
 
 
 -- INSERT DATA MANUALLY 
---	INSERT INTO classes (subject_id, classroom_id, group_id, day, start_time, class_type)
---	VALUES 
---		(1, 4, 1, '2020-07-13', '8:30', 'seminar'); 	-- successfuly pass check_group_availability trigger
---		(1, 1, 18, '2020-07-13', '8:30', 'seminar'); 	-- raise exception when subject_id doesn't belong to group_id
+-- INSERT INTO classes (subject_id, classroom_id, group_id, day, start_time, class_type)
+-- VALUES
+	-- (1, 4, 1, '2020-07-13', '8:30', 'seminar'),		-- successfuly pass check_group_availability trigger
+	-- (1, 1, 18, '2020-07-13', '8:30', 'seminar'); 	-- raise exception when subject_id doesn't belong to group_id
