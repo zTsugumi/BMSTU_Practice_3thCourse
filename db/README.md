@@ -8,5 +8,5 @@ Email: <famkowalsky@gmail.com>
 ### Requirements
 DBMS: PostgreSQL  
 
-### TODO:  
-Fix check constraints to table "classes"
+### ER Diagram:  
+![alt text](https://github.com/zTsugumi/BMSTU_Practice_3thCourse/tree/feature_db/db/ER.png "ER Diagram")
