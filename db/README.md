@@ -9,7 +9,7 @@ Email: <famkowalsky@gmail.com>
 DBMS: PostgreSQL  
 
 ### ER Model - Chen notation:
-[ERD](doc/ERD.png)
+![](doc/ERD.png)
 
 ### ER Diagram:  
-[ERD](doc/ER.png)
+![](doc/ER.png)
