@@ -4,7 +4,8 @@ Develop a program in Lisp that generates a class schedule for students.
 * Emacs as an IDE  
 * SLIME: Superior Lisp Interaction Mode for Emacs  
 * SBCL: Steel Bank Common Lisp  
-[See more](https://lispcookbook.github.io/cl-cookbook/emacs-ide.html)
+[See more](https://lispcookbook.github.io/cl-cookbook/emacs-ide.html)  
+* PostgreSQL
 # Problem statement
 ## Given
 * List of groups 
@@ -28,7 +29,7 @@ Develop a program in Lisp that generates a class schedule for students.
   -	1 lecture per stream per week,
   -	1 or 2 labs per group per week,
   -	1 seminar per group per week.
-*	Information of groups, streams, classrooms and classes by subjects is saved in different DB or excel tables (for DB, we can use *?? Piton ??*)
+*	Information of groups, streams, classrooms and classes by subjects is saved in different DB or excel tables
 ## TASK 1
 *	Copy information from DB tables to lists (develop the structure of the lists) or fill in lists by entering information using the keyboard;
 *	Split groups into streams – a new list;
