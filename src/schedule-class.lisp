@@ -54,7 +54,7 @@
   (cond
     ((null sequence) -1)
     ((local-time:timestamp= item (car sequence)) res)
-    (t (position-time item (cdr sequence) (+ res 1)))
+    (t (position-of-time item (cdr sequence) (+ res 1)))
   )
 )
 
