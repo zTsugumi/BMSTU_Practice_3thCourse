@@ -8,5 +8,8 @@ Email: <famkowalsky@gmail.com>
 ### Requirements
 DBMS: PostgreSQL  
 
+### ER Model - Chen notation:
+[ERD](doc/ERD.png)
+
 ### ER Diagram:  
-![click here](https://github.com/zTsugumi/BMSTU_Practice_3thCourse/tree/feature_db/db/ER.png "ER Diagram")
+[ERD](doc/ER.png)
