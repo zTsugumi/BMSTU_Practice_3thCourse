@@ -6,7 +6,7 @@
   :license  "Specify license here"
   :version "0.0.1"
   :serial t
-  :depends-on (#:postmodern #:cl-postgres+local-time)
+  :depends-on (#:postmodern #:cl-postgres+local-time #:iterate)
   :components ((:file "package")
                (:file "schedule-class")))
 
