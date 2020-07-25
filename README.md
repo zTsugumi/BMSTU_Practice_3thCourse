@@ -4,5 +4,5 @@
 *	Python script to automatically generate data  
 
 ### Author  
-Implementer : yatagani Kleydi  
+Implementer : Yatagani Kleydi  
 Email : <famkowalsky@gmail.com>  
