@@ -8,5 +8,6 @@
   :serial t
   :depends-on (#:postmodern #:cl-postgres+local-time #:iterate)
   :components ((:file "package")
+               (:file "divide-streams"
                (:file "schedule-class")))
 
