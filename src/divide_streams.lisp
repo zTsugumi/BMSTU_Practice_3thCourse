@@ -13,7 +13,7 @@
 
 ;expect result: (((IU 1(A B C)(IU 2(A B C)(IU 3(A B C)(IU 4(A B C))(FN 1(A B C)(FN 2(A B C)(FN 3(A B C)(FN 4(A B C)))
 
-
+(in-package #:schedule-class)
 
 
 (defun split-streams ()
