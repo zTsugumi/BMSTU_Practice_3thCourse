@@ -28,7 +28,6 @@ CLASSROOMS = {
             '405': [['8:30', '12:00', '8:30', '12:00', '8:30', '10:15'], [6, 1, 2, 1, 3, 4]]
             }
 
-
 # FACULTY_SUBJECT TABLE
 fac_sub = []
 sub_id = 0
@@ -58,8 +57,37 @@ for key in CLASSROOMS:
             start += 1
 
 
+# EXTRACT SUBJECT_GROUPS_VIEW FROM DB
+try:
+    connection = psycopg2.connect(user = "postgres",
+                                  password = "postgres",
+                                  host = "127.0.0.1",
+                                  port = "5432",
+                                  database = "schedule_db")
+
+    cursor = connection.cursor()
+    sub_group_view = "select * from subject_groups_view"
+    cursor.execute(sub_group_view)
+    view_record = cursor.fetchall()
+
+except(Exception, psycopg2.Error) as error:
+    print("Error while fetching data from PostgreSQL", error)
+finally:
+        if(connection):
+            cursor.close()
+            connection.close()
+            print("PostgreSQL connection is closed")
+
+
+# LIST OF [Group_id, Type, Sub_id]
+timetable = []
+for row in view_record:
+    for _type in class_type:
+        timetable.append([row[1], _type, row[0]])
+
+
 # WRITE DATA TO CLASS TABLE
-with open("out.csv", 'w', newline='') as csvfile:
+with open("classes.csv", 'w', newline='') as csvfile:
     fieldnames = ['subject_id', 'classroom_id', 'group_id', 'day', 'start_time', 'class_type']
     writer =csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
