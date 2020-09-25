@@ -2,6 +2,7 @@
 
 \c schedule_db;
 
+DROP VIEW IF EXISTS subject_groups_view;
 DROP TABLE IF EXISTS faculty_subject;
 DROP TABLE IF EXISTS classes;
 DROP TABLE IF EXISTS groups CASCADE;
@@ -77,7 +78,7 @@ CREATE VIEW subject_groups_view as
 	INNER JOIN groups USING (faculty_id)
 	ORDER BY subject_id ASC;
 
-	
+DROP TRIGGER IF EXISTS check_group_availability ON classes;
 CREATE OR REPLACE FUNCTION check_group_availability() 
 RETURNS trigger AS $check_group_availability$
     BEGIN
@@ -94,7 +95,6 @@ RETURNS trigger AS $check_group_availability$
 		RETURN NEW;
     END; $check_group_availability$ 
 LANGUAGE plpgsql;
-
 
 CREATE TRIGGER check_group_availability
 BEFORE INSERT OR UPDATE ON classes
