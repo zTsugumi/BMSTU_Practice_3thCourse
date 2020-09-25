@@ -77,29 +77,24 @@
 (defun find-free-classroom (classes start-times paras)
   "Find all free time of all classrooms during the week"
   (loop for day in '(0 1 2 3 4 5)           ; Loop through all days of week [0 1 2 .. 6] ~ ["Mon" "Tue" .. "Sat"]
-     do
+     collect
        (let ((time (elt start-times day))   ; time: start-time of the given "day"
 	     (para (elt paras day))         ; para: number of para of the given "day"
 	     (first-index 0)
-	     (last-index 0)
-	     (free-slot '()))
+	     (last-index 0))
 	 (setq first-index (position-of-time time *start-time*)) ; first-index: index time of first para of the day
 	 (setq last-index (- (+ first-index para) 1))            ; last-index: index time of last para of the day
  
-	 (setq free-slot                    ; Check the status of time slots of the given classroom.
-	       (mapcar                      ; NIL - busy, T - free
-		(lambda (tmp)
-		  (cond
-		    ((local-time:timestamp< tmp time) nil)                           ; time slot < first para    
-		    ((local-time:timestamp> tmp (nth last-index *start-time*)) nil)  ; time slot > last para
-		    ((check-class classes day tmp) nil)
-		    (t t)
-		  )
-		)
-		*start-time*)
-	 )
-
-	 (print free-slot)
+	 (mapcar                            ; Check the status of time slots of the given classroom. NIL - busy, T - free
+	  (lambda (tmp)
+	    (cond
+	      ((local-time:timestamp< tmp time) nil)                           ; time slot < first para    
+	      ((local-time:timestamp> tmp (nth last-index *start-time*)) nil)  ; time slot > last para
+	      ((check-class classes day tmp) nil)
+	      (t t)
+	     )
+	  )
+	  *start-time*)	
        )
   )
 )
@@ -110,9 +105,12 @@
      do
        (multiple-value-bind (id room-nr start-time para) (values-list classroom)
 	 (format t "Classroom id: ~a Room num: ~a" id room-nr)
-	 (let ((classes '()))
+	 (let (
+	       (classes '())
+	       (res '()))
 	   (setq classes (find-class-by-classroomid *classes* id ()))
-	   (find-free-classroom classes start-time para)
+	   (setq res (find-free-classroom classes start-time para))
+	   (print res)
 	 )
 	 (format t "~%~%")))
 )
