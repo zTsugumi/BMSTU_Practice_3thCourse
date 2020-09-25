@@ -107,8 +107,8 @@ EXECUTE PROCEDURE check_group_availability();
 \COPY groups (faculty_id, name) FROM 'groups.csv' DELIMITER ',' CSV;
 \COPY subjects (name) FROM 'subjects.csv' DELIMITER ',' CSV;
 \COPY classrooms (room_nr, start_time, para) FROM 'classrooms.csv' DELIMITER ',' CSV;
-\COPY classes (subject_id, classroom_id, group_id, day, start_time, class_type) FROM 'classes.csv' DELIMITER ',' CSV;
 \COPY faculty_subject (faculty_id, subject_id) FROM 'fac_sub.csv' DELIMITER ',' CSV;
+\COPY classes (subject_id, classroom_id, group_id, day, start_time, class_type) FROM 'classes.csv' DELIMITER ',' CSV;
 
 
 -- INSERT DATA MANUALLY 
